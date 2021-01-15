@@ -32,7 +32,6 @@ set_threshold = int(
 print("#+"*10)
 time.sleep(1)
 print("I have activated the system!!!!!\nEnjoy!")
-# activate_task(opt, email, password, meet_code, set_threshold)
 
 
 # -----The following code snipet disables the microphone and video access from the browser----- #
