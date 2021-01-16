@@ -1,5 +1,8 @@
 # GMeetHack
 Auto login and end a Google meet  
+<p align="center"> 
+    <img src='https://github.com/prathameshThakur/GMeetHack/blob/main/working_demo.gif'>
+</p>
 
 ## Requirements and setup
 `python`
