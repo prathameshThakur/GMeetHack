@@ -13,7 +13,7 @@ from selenium.webdriver.chrome.options import Options
 1. Open chrome browser
 2. Open the google login page
 3. Enter the email password and get in
-4. Go to the desired G-meet  
+4. Go to the desired G-meet
 5. After getting into meet keep an eye on the participants counts
    and end the meet after the min. threshold
 #----------------------------------------------------------------#
@@ -24,7 +24,7 @@ url = 'https://meet.google.com/landing?authuser=1'
 
 # get data from user!
 print("#+"*10)
-email = input("Enter your email address: ").strip()
+email = 'input("Enter your email address: ").strip()'
 password = getpass("Password: ")
 meet_code = input("Google meet code(eg: abc-defg-hij): ").strip()
 set_threshold = int(
@@ -89,7 +89,7 @@ time.sleep(2)
 
 # join meeting
 join = chrome.find_element_by_xpath(
-    '//*[@id="yDmH0d"]/c-wiz/div/div/div[8]/div[3]/div/div/div[2]/div/div[1]/div[2]/div/div[2]/div/div[1]/div[1]/span')
+    '/html/body/div[1]/c-wiz/div/div/div[9]/div[3]/div/div/div[2]/div/div[1]/div[2]/div/div[2]/div/div/div[1]/span')
 join.click()
 
 # Now we are inside the meeting!
@@ -113,5 +113,3 @@ while True:
         break
     else:
         time.sleep(2)
-
-
