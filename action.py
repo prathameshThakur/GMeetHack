@@ -61,7 +61,7 @@ emailid.send_keys(email)
 
 # press next button
 next1 = chrome.find_element_by_xpath(
-    '//*[@id="identifierNext"]/div/button/div[2]')
+    '//*[@id="identifierNext"]/div/button/span')
 next1.click()
 time.sleep(2)
 
@@ -73,7 +73,7 @@ time.sleep(2)
 
 # press next button
 next2 = chrome.find_element_by_xpath(
-    '//*[@id="passwordNext"]/div/button/div[2]')
+    '//*[@id="passwordNext"]/div/button/span')
 next2.click()
 time.sleep(3)
 
@@ -89,7 +89,7 @@ time.sleep(2)
 
 # join meeting
 join = chrome.find_element_by_xpath(
-    '//*[@id="yDmH0d"]/c-wiz/div/div/div[8]/div[3]/div/div/div[2]/div/div[1]/div[2]/div/div[2]/div/div[1]/div[1]/span')
+    '//*[@id="yDmH0d"]/c-wiz/div/div/div[9]/div[3]/div/div/div[4]/div/div/div[2]/div/div[2]/div/div[1]/div[1]/span')
 join.click()
 
 # Now we are inside the meeting!
@@ -101,15 +101,19 @@ time.sleep(100)
 while True:
     print('Working fine!!!!')
     data = chrome.find_element_by_xpath(
-        '//*[@id="ow3"]/div[1]/div/div[8]/div[3]/div[6]/div[3]/div/div[2]/div[1]/span/span/div/div/span[2]')
+        '//*[@id="ow3"]/div[1]/div/div[9]/div[3]/div[10]/div[3]/div[2]/div/div/div[2]/div')
     # num = data.get_attribute('value')
     num = data.text
     if int(num) < set_threshold:
         # by default threshold is 3.. meaning, when the no. of ppl decreased by less than 3 it will end the call!!
         end = chrome.find_element_by_xpath(
-            '//*[@id="ow3"]/div[1]/div/div[8]/div[3]/div[9]/div[2]/div[2]/div')
+            '//*[@id="ow3"]/div[1]/div/div[9]/div[3]/div[10]/div[2]/div/div[7]/span/button')
         end.click()
+        
         print('SESSION ENDED!!! '*3)
+        end_call_pop = chrome.find_element_by_xpath(
+            '//*[@id="yDmH0d"]/div[3]/div/div[2]/div[2]/div[1]/span/span')
+        end_call_pop.click()
         break
     else:
         time.sleep(2)
